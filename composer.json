@@ -1,4 +1,16 @@
 {
+	"name": "snoop0x7b/personator",
+	"type": "library",
+	"description": "Melissa Data Personator library",
 	"require": {
+		"guzzlehttp/guzzle": "^6.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^7.5"
+	},
+	"autoload": {
+		"psr-4": {
+			"Holtsdev\\Personator\\": "lib"
+		}
 	}
 }
