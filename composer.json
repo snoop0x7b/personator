@@ -2,6 +2,8 @@
 	"name": "snoop0x7b/personator",
 	"type": "library",
 	"description": "Melissa Data Personator library",
+	"license": "Apache",
+	"homepage": "https://github.com/snoop0x7b/personator",
 	"require": {
 		"guzzlehttp/guzzle": "^6.0"
 	},
