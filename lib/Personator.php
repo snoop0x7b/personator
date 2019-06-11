@@ -3,6 +3,7 @@
     namespace Holtsdev\Personator;
 
     use GuzzleHttp\Client;
+    use GuzzleHttp\Exception\GuzzleException;
     use InvalidArgumentException;
 
     /**
@@ -43,7 +44,7 @@ class Personator {
      * @param array $actions Valid actions include Check, Verify, Append, Move
      * @param array $addressParams Address parameters defining the address you intend to look up.
      * @return PersonatorResult
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      * @throws InvalidArgumentException
      */
     public function doRequest(array $actions, array $addressParams) {
