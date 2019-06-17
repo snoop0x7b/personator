@@ -58,7 +58,7 @@ class Personator {
         $params['id'] = $this->licenseKey;
         // JSON only because that's what this library is designed to process.
         $params['format'] = 'json';
-        array_merge($params, $addressParams);
+        $params = array_merge($params, $addressParams);
         $params['act'] = implode(',', $actions);
         $response = $client->request('GET', $this->personatorUrl, [
             'query' => $params
