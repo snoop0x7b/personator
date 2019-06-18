@@ -40,7 +40,7 @@
          * @return bool
          */
         public function hasGoodAddress() {
-            foreach($this->Records as $record) {
+            foreach($this->records as $record) {
                 if (count(array_intersect(explode(',', $record->Results), $this->goodCodes)) > 0) {
                     // Then the address is fine.
                     return true;
@@ -56,7 +56,7 @@
          */
         public function hasCorrections() {
             // AC code is address change  http://wiki.melissadata.com/index.php?title=Result_Codes&showObj=Address&ShowCodes=ShowCodes&ShowExamples=ShowExamples
-            foreach($this->Records as $record) {
+            foreach($this->records as $record) {
                 if (preg_grep('/^AC/', explode(',', $record->Results))) {
                     return true;
                 }
