@@ -41,8 +41,8 @@
                     // Then the address is fine.
                     return true;
                 }
-                return false;
             }
+            return false;
         }
 
         /**
@@ -56,8 +56,8 @@
                 if ($record->hasCorrections()) {
                     return true;
                 }
-                return false;
             }
+            return false;
         }
 
         /**
