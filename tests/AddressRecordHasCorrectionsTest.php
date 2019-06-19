@@ -25,6 +25,20 @@
         }
 
         public function testHasGoodAddress() {
-
+            $goodCodes = [
+                'AS01',
+                'AS02',
+                'AS03'
+            ];
+            foreach($goodCodes as $goodCode) {
+                $addressRecord = new AddressRecord( [
+                    'Results' => $goodCode
+                ]);
+                $this->assertTrue($addressRecord->hasGoodAddress());
+            }
+            $addressRecord = new AddressRecord([
+                'Results' => ''
+            ]);
+            $this->assertFalse($addressRecord->hasGoodAddress());
         }
     }
