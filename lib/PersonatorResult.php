@@ -8,15 +8,6 @@
     class PersonatorResult {
 
 
-        // Codes can be found here: http://wiki.melissadata.com/index.php?title=Result_Code_Details#Address_Object
-        // AS01, AS02, and AS03 are the codes that indicate no corrections are necessary
-        //
-        private $goodCodes = [
-            'AS01',
-            'AS02',
-            'AS03'
-        ];
-
         private $records = [];
 
         public function __construct(string $resultJson) {
@@ -41,7 +32,7 @@
          */
         public function hasGoodAddress() {
             foreach($this->records as $record) {
-                if (count(array_intersect(explode(',', $record->Results), $this->goodCodes)) > 0) {
+                if ($record->hasGoodAddress()) {
                     // Then the address is fine.
                     return true;
                 }
@@ -57,7 +48,7 @@
         public function hasCorrections() {
             // AC code is address change  http://wiki.melissadata.com/index.php?title=Result_Codes&showObj=Address&ShowCodes=ShowCodes&ShowExamples=ShowExamples
             foreach($this->records as $record) {
-                if (preg_grep('/^AC/', explode(',', $record->Results))) {
+                if ($record->hasCorrections()) {
                     return true;
                 }
                 return false;
