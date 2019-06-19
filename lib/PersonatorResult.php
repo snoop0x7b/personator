@@ -10,6 +10,11 @@
 
         private $records = [];
 
+        private $TotalRecords;
+        private $TransmissionReference;
+        private $TransmissionResults;
+        private $Version;
+
         public function __construct(string $resultJson) {
             // Build class instance
             foreach (json_decode($resultJson, true) as $key => $value) {
@@ -54,6 +59,42 @@
                 return false;
             }
         }
+
+        /**
+         * @return array
+         */
+        public function getRecords() {
+            return $this->records;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getTotalRecords() {
+            return $this->TotalRecords;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getTransmissionReference() {
+            return $this->TransmissionReference;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getTransmissionResults() {
+            return $this->TransmissionResults;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getVersion() {
+            return $this->Version;
+        }
+
 
 
     }
