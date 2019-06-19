@@ -9,6 +9,7 @@
         private $resultCodes;
 
 
+        // Define basic fields
         private $AddressExtras;
         private $AddressKey;
         private $AddressLine1;
@@ -25,6 +26,8 @@
         private $RecordID;
         private $Reserved;
         private $State;
+
+        use \Rakshazi\GetSetTrait;
 
         // Codes can be found here: http://wiki.melissadata.com/index.php?title=Result_Code_Details#Address_Object
         // AS01, AS02, and AS03 are the codes that indicate no corrections are necessary

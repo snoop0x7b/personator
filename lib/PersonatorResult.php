@@ -15,6 +15,8 @@
         private $TransmissionResults;
         private $Version;
 
+        use \Rakshazi\GetSetTrait;
+
         public function __construct(string $resultJson) {
             // Build class instance
             foreach (json_decode($resultJson, true) as $key => $value) {
