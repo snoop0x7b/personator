@@ -22,10 +22,10 @@ class Personator {
     const APPEND = 'Append';
 
     private $validActions = [
-        CHECK,
-        VERIFY,
-        MOVE,
-        APPEND
+        self::CHECK,
+        self::VERIFY,
+        self::MOVE,
+        self::APPEND
     ];
 
     private $licenseKey;
