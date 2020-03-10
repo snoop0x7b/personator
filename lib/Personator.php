@@ -46,6 +46,7 @@ class Personator {
      * @return PersonatorResult
      * @throws GuzzleException
      * @throws InvalidArgumentException
+     * @throws PersonatorRequestException
      */
     public function doRequest(array $actions, array $addressParams) {
         if (count($actions) === 0 || (count($actions) != count(array_intersect($actions, $this->validActions))) ) {
@@ -64,7 +65,7 @@ class Personator {
             'query' => $params
         ] );
         if ($response->getStatusCode() != 200) {
-            throw new Exception('Invalid response from melissa! ' .$response->getStatusCode());
+            throw new PersonatorRequestException('Invalid response from melissa! ' .$response->getStatusCode());
         }
 
         $result = new PersonatorResult($response->getBody());
