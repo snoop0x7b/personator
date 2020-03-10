@@ -48,7 +48,7 @@ class Personator {
      * @throws InvalidArgumentException
      */
     public function doRequest(array $actions, array $addressParams) {
-        if (count($actions) != 0 && count($actions) == count(array_intersect($actions, $this->validActions))) {
+        if (count($actions) === 0 || (count($actions) != count(array_intersect($actions, $this->validActions))) ) {
             throw new InvalidArgumentException("Actions may only be one or more of: " . implode(',',$this->validActions));
         }
         // Instantiate a GuzzleHttp client
