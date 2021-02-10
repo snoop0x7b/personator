@@ -4,5 +4,7 @@
     namespace Holtsdev\Personator;
 
 
-    class PersonatorRequestException extends \Exception {
+    use Exception;
+
+    class PersonatorRequestException extends Exception {
     }

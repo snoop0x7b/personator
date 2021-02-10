@@ -4,6 +4,7 @@
     namespace Holtsdev\Personator;
 
     use Holtsdev\Personator\AddressRecord;
+    use Rakshazi\GetSetTrait;
 
     class PersonatorResult {
 
@@ -15,8 +16,12 @@
         private $TransmissionResults;
         private $Version;
 
-        use \Rakshazi\GetSetTrait;
+        use GetSetTrait;
 
+        /**
+         * PersonatorResult constructor.
+         * @param string $resultJson
+         */
         public function __construct(string $resultJson) {
             // Build class instance
             foreach (json_decode($resultJson, true) as $key => $value) {
@@ -35,9 +40,9 @@
         /**
          * This function will tell you whether the result from melissa contains a good address.
          * This may return true regardless of whether Melissa appends or changes the address.
-         * @return bool
+         * @return boolean
          */
-        public function hasGoodAddress() {
+        public function hasGoodAddress(): boolean {
             foreach($this->records as $record) {
                 if ($record->hasGoodAddress()) {
                     // Then the address is fine.
@@ -50,9 +55,9 @@
         /**
          * This function tells you whether the result has changes. having an AC code means it has an address correction.
          * Which AC code(s) specifically tells you which portions have been changed.
-         * @return bool
+         * @return boolean
          */
-        public function hasCorrections() {
+        public function hasCorrections(): boolean {
             // AC code is address change  http://wiki.melissadata.com/index.php?title=Result_Codes&showObj=Address&ShowCodes=ShowCodes&ShowExamples=ShowExamples
             foreach($this->records as $record) {
                 if ($record->hasCorrections()) {
@@ -72,7 +77,7 @@
         /**
          * @return mixed
          */
-        public function getTotalRecords() {
+        public function getTotalRecords(): int {
             return $this->TotalRecords;
         }
 
