@@ -57,7 +57,7 @@
          * Which AC code(s) specifically tells you which portions have been changed.
          * @return bool
          */
-        public function hasCorrections(): boolean {
+        public function hasCorrections(): bool {
             // AC code is address change  http://wiki.melissadata.com/index.php?title=Result_Codes&showObj=Address&ShowCodes=ShowCodes&ShowExamples=ShowExamples
             if (preg_grep('/^AC/', $this->resultCodes)) {
                 return true;
@@ -71,7 +71,7 @@
          * Which AC code(s) specifically tells you which portions have been changed.
          * @return bool
          */
-        public function hasGoodAddress(): boolean {
+        public function hasGoodAddress(): bool {
             if (count(array_intersect($this->resultCodes, $this->goodCodes)) > 0) {
                 // Then the address is fine.
                 return true;

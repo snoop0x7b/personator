@@ -42,7 +42,7 @@
          * This may return true regardless of whether Melissa appends or changes the address.
          * @return boolean
          */
-        public function hasGoodAddress(): boolean {
+        public function hasGoodAddress(): bool {
             foreach($this->records as $record) {
                 if ($record->hasGoodAddress()) {
                     // Then the address is fine.
@@ -57,7 +57,7 @@
          * Which AC code(s) specifically tells you which portions have been changed.
          * @return boolean
          */
-        public function hasCorrections(): boolean {
+        public function hasCorrections(): bool {
             // AC code is address change  http://wiki.melissadata.com/index.php?title=Result_Codes&showObj=Address&ShowCodes=ShowCodes&ShowExamples=ShowExamples
             foreach($this->records as $record) {
                 if ($record->hasCorrections()) {
