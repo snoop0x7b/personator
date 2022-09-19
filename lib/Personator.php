@@ -12,7 +12,16 @@
      * @package Holtsdev\Personator
      */
 class Personator {
-
+    const FIRSTNAME = 'first';
+    const LASTNAME = 'last';
+    const ADDRESSLINE1 = 'a1';
+    const ADDRESSLINE2 = 'a2';
+    const STATE = 'state';
+    const CITY = 'city';
+    const POSTALCODE = 'postal';
+    const COLUMNS = 'cols';
+    const ADDRESSTYPECODE = 'AddressTypeCode';
+    const DELIVERYINDICATOR = 'DeliveryIndicator';
 
     private $personatorUrl = "https://personator.melissadata.net/v3/WEB/ContactVerify/doContactVerify";
 
